@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <style name="MainTheme" parent="MainTheme.Base">
+
+  </style>
+  <!-- Base theme applied no matter what API -->
+  <style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!--If you are using revision 22.1 please use just windowNoTitle. Without android:-->
+    <item name="windowNoTitle">true</item>
+    <!--We will be using the toolbar so no need to show ActionBar-->
+    <item name="windowActionBar">false</item>
+    <!-- Set theme colors from http://www.google.com/design/spec/style/color.html#color-color-palette -->
+    <!--colorPrimary is used for the default action bar background-->
+    <!--<item name="colorPrimary">#2196F3</item>-->
+    <!--colorPrimaryDark is used for the status bar-->
+    <!--<item name="colorPrimaryDark">#1976D2</item>-->
+    <!--colorAccent is used as the default value for colorControlActivated
+         which is used to tint widgets-->
+    <!--<item name="colorAccent">#FF4081</item>-->
+    <!--You can also set colorControlNormal, colorControlActivated
+         colorControlHighlight and colorSwitchThumbNormal.-->
+    <item name="windowActionModeOverlay">true</item>
+
+    <item name="text_primary_default">@color/textPrimaryDefaultDarkTheme</item>
+    <item name="text_primary_disabled">@color/textPrimaryDisabledDarkTheme</item>
+    <item name="text_secondary_default">@color/textSecondaryDefaultDarkTheme</item>
+    <item name="text_secondary_disabled">@color/textSecondaryDisabledDarkTheme</item>
+    <item name="android:textColorPrimary">@color/selector_text_color_primary_dark_theme</item>
+    <item name="android:textColorSecondary">@color/selector_text_color_secondary_dark_theme</item>
+    
+    <item name="android:colorBackground">@color/windowBackgroundThemeBlueGray</item>
+    <item name="android:windowBackground">@color/windowBackgroundThemeBlueGray</item>
+    
+    <item name="color_ripple">#00BCD4</item>
+    <item name="colorControlActivated">?attr/colorAccent</item>
+    <item name="colorControlHighlight">?attr/color_ripple</item>
+
+
+    <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyle</item>
+  </style>
+
+  <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+    <item name="colorAccent">#FF4081</item>
+  </style>
+
+
+
+  <style name="ThemeBlueGray">
+    <item name="colorPrimary">#0E1A20</item>
+    <item name="colorPrimaryDark">#000000</item>
+    <item name="colorAccent">#009688</item>
+    <item name="android:colorBackground">@color/windowBackgroundThemeBlueGray</item>
+    <item name="android:windowBackground">@color/windowBackgroundThemeBlueGray</item>
+    <item name="colorButtonNormal">#505B63</item>
+
+    <item name="color_ripple">@color/colorRippleDark</item>
+  </style>
+
+  <style name="ThemeTeal">
+    <item name="colorPrimary">#00BFA5</item>
+    <item name="colorPrimaryDark">#004D40</item>
+    <item name="colorAccent">#673AB7</item>
+    <item name="android:colorBackground">@color/windowBackgroundThemeTeal</item>
+    <item name="android:windowBackground">@color/windowBackgroundThemeTeal</item>
+    <item name="colorButtonNormal">#2A776A</item>
+
+    <item name="color_ripple">#E65100</item>
+  </style>
+
+  <style name="ThemeOrange">
+    <item name="colorPrimary">#B62100</item>
+    <item name="colorPrimaryDark">#661100</item>
+    <item name="colorAccent">#46CF03</item>
+    <item name="android:colorBackground">@color/windowBackgroundThemeOrange</item>
+    <item name="android:windowBackground">@color/windowBackgroundThemeOrange</item>
+    <item name="colorButtonNormal">#E65100</item>
+
+    <item name="color_ripple">#4E342E</item>
+  </style>
+
+  <style name="ThemeDeepPurple">
+    <item name="colorPrimary">#9575CD</item>
+    <item name="colorPrimaryDark">#55358D</item>
+    <item name="colorAccent">#303F9F</item>
+    <item name="android:colorBackground">@color/windowBackgroundThemeDeepPurple</item>
+    <item name="android:windowBackground">@color/windowBackgroundThemeDeepPurple</item>
+    <item name="colorButtonNormal">#7E57C2</item>
+
+    <item name="color_ripple">#00BCD4</item>
+  </style>
+</resources>

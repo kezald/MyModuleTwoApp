@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <attr name="color_ripple" format="reference|color"/>
+  <attr name="text_primary_default" format="reference|color"/>
+  <attr name="text_primary_disabled" format="reference|color"/>
+  <attr name="text_secondary_default" format="reference|color"/>
+  <attr name="text_secondary_disabled" format="reference|color"/>
+</resources>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <color name="colorBackground">#311B92</color>
+  <color name="windowBackground">#311B92</color>
+
+  <color name="colorRippleDark">#33ffffff</color>
+  <color name="colorRippleLight">#1f000000</color>
+  
+  <color name="textPrimaryDefaultDarkTheme">#FFFFFF</color>
+  <color name="textPrimaryDisabledDarkTheme">#4DFFFFFF</color>
+  <color name="textSecondaryDefaultDarkTheme">#B3FFFFFF</color>
+  <color name="textSecondaryDisabledDarkTheme">#36FFFFFF</color>
+
+  <color name="windowBackgroundThemeBlueGray">#263238</color>
+  <color name="windowBackgroundThemeTeal">#004D40</color>
+  <color name="windowBackgroundThemeOrange">#DF7800</color>
+  <color name="windowBackgroundThemeDeepPurple">#311B92</color>
+</resources>

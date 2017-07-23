@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyModuleTwoApp.PageTable"
+             Title="Table Information">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout Margin="20,0,0,0">
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="entryDescription" HorizontalOptions="FillAndExpand" />
+                <Button x:Name="buttonAddNew" Clicked="buttonAddNew_Clicked" Text="Add new" />
+            </StackLayout>
+
+            <ListView x:Name="TableList" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Description, StringFormat='Description: {0}'}" TextColor="White"
+                                       HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding Id, StringFormat='Description: {0}'}" FontSize="Small" TextColor="White"
+                                       HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+                                <Button Text="X" FontSize="Medium" HeightRequest="20" WidthRequest="60"
+                                         TextColor="Red" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="buttonDelete_Clicked"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
