@@ -21,6 +21,7 @@ namespace MyModuleTwoApp.Droid.Pages
     public class BaseActivity : ThemeActivity
     {
         Android.Support.V7.Widget.Toolbar toolbarApp;
+        View bt_showLocation;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -40,7 +41,7 @@ namespace MyModuleTwoApp.Droid.Pages
         {
             base.OnStart();
 
-            View bt_showLocation = FindViewById(Resource.Id.bt_show_location);
+            bt_showLocation = FindViewById(Resource.Id.bt_show_location);
             bt_showLocation.SetBackgroundColor(themeSupport.getThemeBackgroundColor());
             bt_showLocation.Click += Bt_showLocation_Click;
 
@@ -88,11 +89,13 @@ namespace MyModuleTwoApp.Droid.Pages
 
         async Task showPosition()
         {
+            bt_showLocation.Enabled = false;
             var locator = CrossGeolocator.Current;
             locator.DesiredAccuracy = 50;
             var position = await locator.GetPositionAsync(10000);
 
-            Toast.MakeText(this, "Latitude: " + position.Latitude + " Longitude: " + position.Longitude, ToastLength.Short).Show();
+            Toast.MakeText(this, "Latitude: " + position.Latitude + " Longitude: " + position.Longitude, ToastLength.Long).Show();
+            bt_showLocation.Enabled = true;
         }
     }
 }
