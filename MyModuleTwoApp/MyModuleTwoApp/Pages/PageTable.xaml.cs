@@ -62,5 +62,10 @@ namespace MyModuleTwoApp
                 listTableElements.Remove(row);
             }
         }
+
+        private void buttonrefresh_Clicked(object sender, EventArgs e)
+        {
+            populateList();
+        }
     }
 }

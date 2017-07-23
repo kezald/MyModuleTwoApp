@@ -20,7 +20,7 @@ namespace MyModuleTwoApp.Droid.Pages
         private const String STATE_ACTIVITY_THEME = "currentTheme";
 
         String currentActivityTheme = ThemeSupport.THEME_UNDEFINED;
-        private ThemeSupport themeSupport;
+        protected ThemeSupport themeSupport;
         protected ThemeActivity self;
 
 

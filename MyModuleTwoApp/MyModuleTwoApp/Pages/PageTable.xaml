@@ -11,6 +11,7 @@
             <StackLayout Orientation="Horizontal">
                 <Entry x:Name="entryDescription" HorizontalOptions="FillAndExpand" />
                 <Button x:Name="buttonAddNew" Clicked="buttonAddNew_Clicked" Text="Add new" />
+                <Button x:Name="buttonrefresh" Clicked="buttonrefresh_Clicked" Text="Refresh" />
             </StackLayout>
 
             <ListView x:Name="TableList" >
@@ -18,10 +19,13 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="{Binding Description, StringFormat='Description: {0}'}" TextColor="White"
+                                <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                                    <Label Text="{Binding Description, StringFormat='Description: {0}'}" FontSize="14" TextColor="White"
                                        HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
-                                <Label Text="{Binding Id, StringFormat='Description: {0}'}" FontSize="Small" TextColor="White"
+                                    <Label Text="{Binding ID, StringFormat='ID: {0}'}" FontSize="8" TextColor="White"
                                        HorizontalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
+                                </StackLayout>
+
                                 <Button Text="X" FontSize="Medium" HeightRequest="20" WidthRequest="60"
                                          TextColor="Red" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="buttonDelete_Clicked"/>
                             </StackLayout>

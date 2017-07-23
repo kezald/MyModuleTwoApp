@@ -132,7 +132,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LocationTracker.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainApplication.cs" />
     <Compile Include="Pages\BaseActivity.cs" />

@@ -12,6 +12,8 @@ using Android.Support.V7.Widget;
 using MyModuleTwoApp;
 using Plugin.Geolocator.Abstractions;
 using Android.Widget;
+using Plugin.Geolocator;
+using System.Threading.Tasks;
 
 namespace MyModuleTwoApp.Droid.Pages
 {
@@ -39,6 +41,7 @@ namespace MyModuleTwoApp.Droid.Pages
             base.OnStart();
 
             View bt_showLocation = FindViewById(Resource.Id.bt_show_location);
+            bt_showLocation.SetBackgroundColor(themeSupport.getThemeBackgroundColor());
             bt_showLocation.Click += Bt_showLocation_Click;
 
             toolbarApp = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
@@ -66,27 +69,30 @@ namespace MyModuleTwoApp.Droid.Pages
             }
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
-            MenuInflater.Inflate(Resource.Menu.menu, menu);
-            return base.OnCreateOptionsMenu(menu);
-        }
+        //public override bool OnCreateOptionsMenu(IMenu menu)
+        //{
+        //    MenuInflater.Inflate(Resource.Menu.menu, menu);
+        //    return base.OnCreateOptionsMenu(menu);
+        //}
 
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            switch(item.ItemId)
-            {
-                case Resource.Id.menuitem_location:
-                    showPosition();
-                    return true;
-            }
-            return base.OnOptionsItemSelected(item);
-        }
+        //public override bool OnOptionsItemSelected(IMenuItem item)
+        //{
+        //    switch(item.ItemId)
+        //    {
+        //        case Resource.Id.menuitem_location:
+        //            showPosition();
+        //            return true;
+        //    }
+        //    return base.OnOptionsItemSelected(item);
+        //}
 
-        public async void showPosition()
+        async Task showPosition()
         {
-            Position pos = await LocationTracker.getLocation();
-            Toast.MakeText(this, "Latitude: " + pos.Latitude + " Longitude: " + pos.Longitude, ToastLength.Short).Show();
+            var locator = CrossGeolocator.Current;
+            locator.DesiredAccuracy = 50;
+            var position = await locator.GetPositionAsync(10000);
+
+            Toast.MakeText(this, "Latitude: " + position.Latitude + " Longitude: " + position.Longitude, ToastLength.Short).Show();
         }
     }
 }

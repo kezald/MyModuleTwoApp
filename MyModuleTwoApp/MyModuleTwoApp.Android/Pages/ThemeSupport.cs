@@ -1,4 +1,5 @@
 using Android.Graphics;
+using Android.Views;
 using Xamarin.Forms.Platform.Android;
 
 namespace MyModuleTwoApp.Droid.Pages
@@ -24,6 +25,7 @@ namespace MyModuleTwoApp.Droid.Pages
         private static string currentGlobalTheme = THEME_BLUE_GRAY;
 
         private ThemeActivity themeActivity;
+        private Color themeBackgroundColor;
 
         public ThemeSupport(ThemeActivity themeActivity)
         {
@@ -65,31 +67,40 @@ namespace MyModuleTwoApp.Droid.Pages
          */
         public void updateActivityTheme()
         {
+            Color color;
             switch (currentGlobalTheme)
             {
                 default:
                 case THEME_BLUE_GRAY:
                     themeActivity.Theme.ApplyStyle(Resource.Style.ThemeBlueGray, true);
-
-                    //Xamarin Hack below. Why background doesn't work otherwise - no idea
-                    themeActivity.Window.DecorView.SetBackgroundColor(Color.ParseColor("#263238"));
-                    //activity.setTheme(R.style.ThemeBlueGray);
+                    color = Color.ParseColor("#263238");
                     break;
                 case THEME_TEAL:
                     themeActivity.Theme.ApplyStyle(Resource.Style.ThemeTeal, true);
-                    themeActivity.Window.DecorView.SetBackgroundColor(Color.ParseColor("#004D40"));
+                    color = Color.ParseColor("#004D40");
                     break;
                 case THEME_ORANGE:
                     themeActivity.Theme.ApplyStyle(Resource.Style.ThemeOrange, true);
-                    themeActivity.Window.DecorView.SetBackgroundColor(Color.ParseColor("#DF7800"));
+                    color = Color.ParseColor("#DF7800");
                     break;
                 case THEME_DEEP_PURPLE:
                     themeActivity.Theme.ApplyStyle(Resource.Style.ThemeDeepPurple, true);
-                    themeActivity.Window.DecorView.SetBackgroundColor(Color.ParseColor("#311B92"));
+                    color = Color.ParseColor("#311B92");
                     break;
             }
-
+            //Xamarin Hack below. Why background doesn't work otherwise - no idea
+            themeActivity.Window.DecorView.SetBackgroundColor(color);
             themeActivity.setLocalThemeName(currentGlobalTheme);
+            themeBackgroundColor = color;
+        }
+
+        public Color getThemeBackgroundColor()
+        {
+            if (themeBackgroundColor == null)
+            {
+                themeBackgroundColor = Color.ParseColor("#263238");
+            }
+            return themeBackgroundColor;
         }
     }
 }

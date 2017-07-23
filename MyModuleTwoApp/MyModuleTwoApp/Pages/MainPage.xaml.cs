@@ -16,6 +16,7 @@ namespace MyModuleTwoApp
             
 
             this.Title = "TabbedPage";
+            
 
             //this.ItemsSource = new NamedColor[]
             //{

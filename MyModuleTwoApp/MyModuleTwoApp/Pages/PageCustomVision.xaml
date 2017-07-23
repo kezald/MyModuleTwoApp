@@ -8,8 +8,8 @@
         <StackLayout Margin="20" Orientation="Vertical">
             <Button Text="Take Photo and Analyze" Clicked="loadCamera" />
             <StackLayout Orientation="Horizontal">
-                <Label x:Name="TagLabel" />
-                <Label x:Name="PredictionLabel" />
+                <Label x:Name="TagLabel" TextColor="White" />
+                <Label x:Name="PredictionLabel" TextColor="White"/>
             </StackLayout>
             <Image x:Name="image" />
         </StackLayout>
